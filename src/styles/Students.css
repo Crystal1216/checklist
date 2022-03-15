@@ -1,0 +1,79 @@
+.Studens {
+  text-align: center;
+}
+
+header,
+.std-form {
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.std-form input,
+.std-form button {
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  background: white;
+  margin-right: 10px;
+}
+.std-form button {
+  color: #bb47ff;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.std-form button:hover {
+  background: #bb47ff;
+  color: white;
+}
+.std-label {
+  margin-right: 5px;
+}
+.std-input-num {
+  max-width: 5%;
+}
+
+.std-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.std-ul {
+  min-width: 50%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Student */
+.std-div {
+  margin: 10px;
+  background: white;
+  font-size: 20px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.std-div li {
+  flex: 1;
+  margin-left: 10px;
+}
+.std-go-btn,
+.std-update-btn,
+.std-trash-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.std-go-btn {
+  background: rgb(85, 120, 196);
+}
+.std-update-btn {
+  background: rgb(104, 196, 85);
+}
