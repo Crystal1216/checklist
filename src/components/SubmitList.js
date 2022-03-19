@@ -5,19 +5,21 @@ import Local from "./Local";
 
 const SubmitList = () => {
   const location = useLocation();
-  const id = location.state.num;
+  const state = location.state;
   const [todos, setTodos] = useState([]);
   useEffect(() => {
     Local.getLocalTodos({ todos, setTodos });
   }, []);
   return (
     <div className="submit">
-      <header>{id}</header>
+      <header>
+        {state.num}. {state.name}
+      </header>
       <div className="split left">
         <h1>OK</h1>
         <ul>
           {todos
-            .filter((el) => el.checked.includes(id))
+            .filter((el) => el.checked.includes(state.num))
             .map((filteredEl) => (
               <li key={filteredEl.id}>{filteredEl.text}</li>
             ))}
@@ -27,7 +29,7 @@ const SubmitList = () => {
         <h1>NG</h1>
         <ul>
           {todos
-            .filter((el) => !el.checked.includes(id))
+            .filter((el) => !el.checked.includes(state.num))
             .map((filteredEl) => (
               <li key={filteredEl.id}>{filteredEl.text}</li>
             ))}

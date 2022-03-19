@@ -20,7 +20,7 @@ const Student = ({
       <li>
         {num}. {name}
       </li>
-      <Link to={`/submit/${num}`} state={{ num }}>
+      <Link to={`/checklist/submit/${num}`} state={{ num, name }}>
         <button className="std-go-btn">
           <i className="fas fa-arrow-right"></i>
         </button>

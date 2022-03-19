@@ -15,11 +15,11 @@ ReactDOM.render(
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/todoList" element={<TodoList />} />
-        <Route path="/check/:id" element={<CheckList />} />
-        <Route path="/students" element={<Students />} />
-        <Route path="/submit/:id" element={<SubmitList />} />
+        <Route path="/checklist" element={<App />} />
+        <Route path="/checklist/todoList" element={<TodoList />} />
+        <Route path="/checklist/check/:id" element={<CheckList />} />
+        <Route path="/checklist/students" element={<Students />} />
+        <Route path="/checklist/submit/:id" element={<SubmitList />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

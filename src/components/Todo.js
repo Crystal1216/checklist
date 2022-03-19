@@ -22,7 +22,7 @@ const Todo = ({ todo, todos, setTodos }) => {
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         {todo.text}
       </li>
-      <Link to={`/check/${todo.id}`} state={{ todo, todos }}>
+      <Link to={`/checklist/check/${todo.id}`} state={{ todo, todos }}>
         <button className="go-btn">
           <i className="fas fa-arrow-right"></i>
         </button>

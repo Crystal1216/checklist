@@ -50,21 +50,9 @@ const CheckList = () => {
     localStorage.removeItem("todos");
     localStorage.setItem("todos", JSON.stringify(todos));
   };
-  // const getLocalChecked = () => {
-  //   if (localStorage.getItem("todos") === null) {
-  //     localStorage.setItem("todos", JSON.stringify([]));
-  //   } else {
-  //     let todoLocal = JSON.parse(
-  //       localStorage.getItem("todos", JSON.stringify(todos))
-  //     );
-  //     setTodos(todoLocal);
-  //   }
-  // };
   return (
     <div className="Check">
-      <header>
-        {todo.text} {todo.checked}
-      </header>
+      <header>{todo.text}</header>
       <form className="check-form">
         <button type="submit" onClick={saveChecksHandler}>
           SAVE
