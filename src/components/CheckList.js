@@ -52,7 +52,9 @@ const CheckList = () => {
   };
   return (
     <div className="Check">
-      <header>{todo.text}</header>
+      <h1>{todo.text}</h1>
+      <h3>(DeadLine : {todo.deadline})</h3>
+      <br />
       <form className="check-form">
         <button type="submit" onClick={saveChecksHandler}>
           SAVE

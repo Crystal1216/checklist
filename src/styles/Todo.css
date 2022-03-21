@@ -1,4 +1,4 @@
-.Students {
+.Todo {
   text-align: center;
   align-items: center;
   margin: 0;
@@ -7,35 +7,25 @@
   height: 100vh;
   justify-content: center;
 }
-.Students > h1 {
+.Todo > h1 {
   margin-bottom: 30px;
   font-size: 2em;
   color: rgb(90, 90, 90);
 }
-.std-register {
+
+.todo-register {
   display: flex;
   justify-content: center;
   margin-bottom: 3em;
 }
-.std-form {
+.todo-form {
   border: 2px solid #d09b52;
   padding: 40px 10px 0px 40px;
   width: 70%;
   max-width: 700px;
   border-radius: 20px;
 }
-/* #focus {
-  border: 3px solid #fef6fb;
-  box-shadow: 0 0 10px 0 #d09b52;
-  position: absolute;
-  transition: width 0.2s ease, height 0.2s ease, left 0.2s ease, top 0.2s ease,
-    border-radius 0.2s ease;
-  pointer-events: none;
-  z-index: 5;
-  border-radius: 10px;
-  display: none;
-} */
-.std-form > input {
+.todo-form > input {
   padding: 10px 15px;
   border-radius: 10px;
   transition: 0.3s ease;
@@ -45,25 +35,30 @@
   float: left;
   margin-right: 30px;
 }
-.std-form > .num {
-  width: calc(30%);
-}
-.std-form > .name {
-  width: calc(60%);
-}
-.std-form > .std-input:placeholder-shown {
+.todo-form > .date {
+  width: 30%;
   border: 2px solid #eae4da;
 }
-.std-form > .std-input::placeholder {
+.todo-form > .ok {
+  width: 30%;
+  border: 2px solid #868283;
+}
+.todo-form > .text {
+  width: 60%;
+}
+.todo-input:placeholder-shown {
+  border: 2px solid #eae4da;
+}
+.todo-input::placeholder {
   color: #a3a5aa;
 }
-.std-form > button {
+.todo-form > button {
   background: #d09b52;
   color: #f8f4ee;
   border: 2px solid #d09b52;
   border-radius: 10px;
   outline: 10px solid #fff;
-  width: calc(25%);
+  width: 25%;
   height: 40px;
   margin: 0 30px -20px 0;
   float: right;
@@ -73,47 +68,56 @@
   text-transform: uppercase;
   cursor: pointer;
 }
-.std-form > button:hover {
+.todo-form > button:hover {
   outline-width: 0;
 }
-/* .std-form > button:focus {
-  outline: 0;
-} */
 
-.std-list {
+.todo-list {
   margin: 0 20% 0 20%;
   padding: 1% 1%;
   border-radius: 10px;
   background: #ecf0f1;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
-.std-ul {
+.todo-filter {
+  margin-left: 70%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+  height: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.todo-ul {
   margin: 0;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
 }
-.std-li {
+.todo-li {
   border-radius: 5px;
   color: #2c3e50;
   font-size: 20px;
   /* line-height: 30px; */
   /* text-align: justify; */
   /* letter-spacing: 1px; */
-  width: 30%;
-  margin: 2% 1.5%;
+  width: 80%;
+  margin: 1.5% 1.5%;
   display: inline-block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background: #fff;
 }
-.std-num {
+.todo-deadline {
   font-size: 15px;
   color: white;
-  margin: -10px 10px 0 -10px;
-  background-color: rgb(206, 192, 162);
+  /* text-align: justify; */
+  margin: -10px 0 0 -10px;
+  background-color: rgb(124, 105, 88);
   border-radius: 5px;
-  width: 30px;
+  width: 120px;
 }
-.std-li-box {
+.todo-li-box {
   border-radius: 5px;
   width: 100%;
   height: 5vh;
@@ -125,49 +129,87 @@
   display: flex;
   align-self: center;
 }
-.std-name-div {
-  overflow: scroll;
-  width: 55%;
+.todo-text-div {
+  width: 75%;
+  overflow: auto;
 }
-.std-name-div > p {
+.todo-item {
   margin-left: 0;
   margin-right: 100%;
+  align-self: center;
 }
-.std-btn-box {
+.completed {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+.todo-btn-box {
   border: none;
-  margin-top: -2px;
   margin-left: auto;
   margin-right: 0;
+  align-self: center;
+  margin-bottom: 10px;
   display: inline-block;
-  min-width: 40%;
 }
-
-.std-go-btn,
-.std-update-btn,
-.std-trash-btn {
+.todo-go-btn,
+.todo-complete-btn,
+.todo-trash-btn {
   border-radius: 100%;
   background: #979797;
   color: white;
   border: none;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  margin-right: 3px;
+  width: 40px;
+  height: 40px;
+  margin-right: 4px;
 }
-.std-update-btn {
-  background-color: rgb(100, 132, 202);
+.todo-complete-btn {
+  background-color: rgb(124, 194, 124);
 }
-.std-trash-btn {
+.todo-trash-btn {
   background-color: rgb(216, 131, 131);
 }
-.std-go-btn:hover,
-.std-update-btn:hover,
-.std-trash-btn:hover {
+.todo-go-btn:hover,
+.todo-complete-btn:hover,
+.todo-trash-btn:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
-/* .std-go-btn {
-  background: rgb(85, 120, 196);
+/*
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}*/
+
+/*
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
 }
-.std-update-btn {
-  background: rgb(104, 196, 85);
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
 } */

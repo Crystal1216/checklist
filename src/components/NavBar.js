@@ -3,25 +3,26 @@ import "../styles/NavBar.css";
 
 const NavBar = () => {
   return (
-    <nav>
-      <ul className="nav-ul">
-        <li>
-          <Link className="text-link" to="/checklist">
-            Home
+    <div id="container">
+      <nav>
+        <div id="logo">
+          <Link className="nav-link" to="/checklist">
+            Submit CheckList
           </Link>
-        </li>
-        <li>
-          <Link className="text-link" to="/checklist/todoList">
-            List
+        </div>
+        <ul>
+          <Link className="nav-link" to="/checklist/calendar">
+            <li>Calendar</li>
           </Link>
-        </li>
-        <li>
-          <Link className="text-link" to="/checklist/students">
-            Students
+          <Link className="nav-link" to="/checklist/todoList">
+            <li>ToDo</li>
           </Link>
-        </li>
-      </ul>
-    </nav>
+          <Link className="nav-link" to="/checklist/students">
+            <li>Students</li>
+          </Link>
+        </ul>
+      </nav>
+    </div>
   );
 };
 

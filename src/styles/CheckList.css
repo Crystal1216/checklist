@@ -1,6 +1,23 @@
-.Check {
+/* .Check {
+  text-align: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  justify-content: center;
+} */
+.Check > h1 {
+  text-align: center;
+  font-size: 2em;
+  color: rgb(90, 90, 90);
 }
+.Check > h3 {
+  text-align: center;
+  color: rgb(90, 90, 90);
+  margin-bottom: 20px;
+}
+
 .check-form {
   min-height: 20vh;
   display: grid;
@@ -9,18 +26,19 @@
 }
 
 .check-form button {
+  border-radius: 10px;
   min-width: 60px;
   margin: 1% 40% 2% 40%;
   padding: 10px;
   font-size: 15px;
   border: none;
-  color: #18726d;
-  background: #f7fffe;
+  color: #ebe5d3;
+  background: #9b7a56;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .check-form button:hover {
-  background: #299792;
+  background: #976729;
   color: white;
 }
 

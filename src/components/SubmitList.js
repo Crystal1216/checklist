@@ -11,28 +11,30 @@ const SubmitList = () => {
     Local.getLocalTodos({ todos, setTodos });
   }, []);
   return (
-    <div className="submit">
-      <header>
-        {state.num}. {state.name}
-      </header>
-      <div className="split left">
-        <h1>OK</h1>
+    <div className="Submit">
+      <h1>{state.name}</h1>
+      <div>
         <ul>
-          {todos
-            .filter((el) => el.checked.includes(state.num))
-            .map((filteredEl) => (
-              <li key={filteredEl.id}>{filteredEl.text}</li>
-            ))}
-        </ul>
-      </div>
-      <div className="split right">
-        <h1>NG</h1>
-        <ul>
-          {todos
-            .filter((el) => !el.checked.includes(state.num))
-            .map((filteredEl) => (
-              <li key={filteredEl.id}>{filteredEl.text}</li>
-            ))}
+          <li className="split">
+            <h3 className="split-text left">OK</h3>
+            <ul>
+              {todos
+                .filter((el) => el.checked.includes(state.num))
+                .map((filteredEl) => (
+                  <li key={filteredEl.id}>{filteredEl.text}</li>
+                ))}
+            </ul>
+          </li>
+          <li className="split">
+            <h3 className="split-text right">NG</h3>
+            <ul>
+              {todos
+                .filter((el) => !el.checked.includes(state.num))
+                .map((filteredEl) => (
+                  <li key={filteredEl.id}>{filteredEl.text}</li>
+                ))}
+            </ul>
+          </li>
         </ul>
       </div>
     </div>

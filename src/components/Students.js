@@ -10,16 +10,6 @@ const Students = () => {
   useEffect(() => {
     Local.getLocalStudents({ studentList, setStudentList });
   }, []);
-  // const getLocalStudents = () => {
-  //   if (localStorage.getItem("students") === null) {
-  //     localStorage.setItem("students", JSON.stringify([]));
-  //   } else {
-  //     let studentsLocal = JSON.parse(
-  //       localStorage.getItem("students", JSON.stringify(studentList))
-  //     );
-  //     setStudentList(studentsLocal);
-  //   }
-  // };
   useEffect(() => {
     saveLocalStudents();
   }, [studentList]);
@@ -62,24 +52,35 @@ const Students = () => {
   const saveLocalStudents = () => {
     localStorage.setItem("students", JSON.stringify(studentList));
   };
+
   return (
     <div className="Students">
-      <header>Students List</header>
-      <form className="std-form">
-        <label className="std-label">No.</label>
-        <input
-          type="number"
-          className="std-input-num"
-          value={num}
-          onChange={numHandler}
-        />
-        <label className="std-label">Name</label>
-        <input type="text" value={name} onChange={nameHandler} />
-        <button type="submit" onClick={listAddHandler}>
-          <i className="fas fa-check"></i>
-        </button>
-      </form>
-      <div className="std-container">
+      <h1>Students List</h1>
+      <div className="std-register">
+        <form className="std-form">
+          <input
+            type="number"
+            className="std-input num"
+            value={num}
+            onChange={numHandler}
+            placeholder="No."
+            required
+          />
+          <input
+            type="text"
+            className="std-input name"
+            value={name}
+            onChange={nameHandler}
+            placeholder="name"
+            required
+          />
+          <button type="submit" onClick={listAddHandler}>
+            {/* <i className="fas fa-check"></i> */}
+            register
+          </button>
+        </form>
+      </div>
+      <div className="std-list">
         <ul className="std-ul">
           {studentList
             .sort((a, b) => {

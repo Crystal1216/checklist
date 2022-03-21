@@ -15,6 +15,9 @@ const List = () => {
     filterHandler();
     saveLocalTodos();
   }, [todos, status]);
+  const statusHandler = ({ target }) => {
+    setStatus(target.value);
+  };
   const filterHandler = () => {
     switch (status) {
       case "completed":
@@ -31,28 +34,27 @@ const List = () => {
   const saveLocalTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   };
-  // const getLocalTodos = () => {
-  //   if (localStorage.getItem("todos") === null) {
-  //     localStorage.setItem("todos", JSON.stringify([]));
-  //   } else {
-  //     let todoLocal = JSON.parse(
-  //       localStorage.getItem("todos", JSON.stringify(todos))
-  //     );
-  //     setTodos(todoLocal);
-  //   }
-  // };
   return (
-    <div className="List">
-      <header>Todo List</header>
-      <TodoForm
-        inputText={inputText}
-        setInputText={setInputText}
-        todos={todos}
-        setTodos={setTodos}
-        setStatus={setStatus}
-      />
-      <div className="todo-container">
-        <ul className="todo-list">
+    <div className="Todo">
+      <h1>Todo List</h1>
+      <div className="todo-register">
+        <TodoForm
+          inputText={inputText}
+          setInputText={setInputText}
+          todos={todos}
+          setTodos={setTodos}
+          setStatus={setStatus}
+        />
+      </div>
+      <div className="todo-list">
+        <div className="todo-select">
+          <select onChange={statusHandler} name="todos" className="todo-filter">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+          </select>
+        </div>
+        <ul className="todo-ul">
           {filteredTodos.map((todo) => (
             <Todo key={todo.id} todo={todo} todos={todos} setTodos={setTodos} />
           ))}

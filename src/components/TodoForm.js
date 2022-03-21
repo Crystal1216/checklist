@@ -1,16 +1,19 @@
-import "../styles/Form.css";
+import { useState } from "react";
+import "../styles/Todo.css";
 
 const TodoForm = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
+  const [inputDate, setInputDate] = useState("");
   const inputTextHandler = (event) => {
     setInputText(event.target.value);
   };
   const submitTodoHandler = (event) => {
     event.preventDefault();
-    if (inputText !== "") {
+    if (inputDate !== "" && inputText !== "") {
       setTodos([
         ...todos,
         {
           text: inputText,
+          deadline: inputDate,
           completed: false,
           id: Math.random() * 1000,
           checked: [],
@@ -19,27 +22,28 @@ const TodoForm = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
       setInputText("");
     }
   };
-  const statusHandler = ({ target }) => {
-    setStatus(target.value);
+  const inputDateHandler = (event) => {
+    setInputDate(event.target.value);
   };
   return (
-    <form className="form-form">
+    <form className="todo-form">
+      <input
+        value={inputDate}
+        onChange={inputDateHandler}
+        type="date"
+        className={`todo-input date ${inputDate !== "" ? "ok" : ""}`}
+      />
       <input
         value={inputText}
         onChange={inputTextHandler}
         type="text"
-        className="todo-input"
+        className="todo-input text"
+        placeholder="TODO"
       />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
-        <i className="fas fa-plus-square"></i>
+        {/* <i className="fas fa-plus-square"></i> */}
+        add
       </button>
-      <div className="select">
-        <select onChange={statusHandler} name="todos" className="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </div>
     </form>
   );
 };

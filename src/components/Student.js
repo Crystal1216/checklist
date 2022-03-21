@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/Students.css";
 
 const Student = ({
   num,
@@ -16,22 +17,27 @@ const Student = ({
     setStudentList(studentList.filter((el) => el.id !== num));
   };
   return (
-    <div className="std-div">
-      <li>
-        {num}. {name}
-      </li>
-      <Link to={`/checklist/submit/${num}`} state={{ num, name }}>
-        <button className="std-go-btn">
-          <i className="fas fa-arrow-right"></i>
-        </button>
-      </Link>
-      <button className="std-update-btn" onClick={updateHandler}>
-        <i className="fas fa-pen"></i>
-      </button>
-      <button className="std-trash-btn" onClick={deleteHandler}>
-        <i className="fas fa-trash"></i>
-      </button>
-    </div>
+    <li className="std-li">
+      <p className="std-num">{num}</p>
+      <div className="std-li-box">
+        <div className="std-name-div">
+          <p>{name}</p>
+        </div>
+        <div className="std-btn-box">
+          <Link to={`/checklist/submit/${num}`} state={{ num, name }}>
+            <button className="std-go-btn">
+              <i className="fas fa-arrow-right"></i>
+            </button>
+          </Link>
+          <button className="std-update-btn" onClick={updateHandler}>
+            <i className="fas fa-pen"></i>
+          </button>
+          <button className="std-trash-btn" onClick={deleteHandler}>
+            <i className="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </li>
   );
 };
 

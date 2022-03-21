@@ -18,22 +18,29 @@ const Todo = ({ todo, todos, setTodos }) => {
     );
   };
   return (
-    <div className="todo">
-      <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
-        {todo.text}
-      </li>
-      <Link to={`/checklist/check/${todo.id}`} state={{ todo, todos }}>
-        <button className="go-btn">
-          <i className="fas fa-arrow-right"></i>
-        </button>
-      </Link>
-      <button onClick={completeHandler} className="complete-btn">
-        <i className="fas fa-check"></i>
-      </button>
-      <button onClick={deleteHandler} className="trash-btn">
-        <i className="fas fa-trash"></i>
-      </button>
-    </div>
+    <li className="todo-li">
+      <p className="todo-deadline">{todo.deadline}</p>
+      <div className="todo-li-box">
+        <div className="todo-text-div">
+          <p className={`todo-item ${todo.completed ? "completed" : ""}`}>
+            {todo.text}
+          </p>
+        </div>
+        <div className="todo-btn-box">
+          <Link to={`/checklist/check/${todo.id}`} state={{ todo, todos }}>
+            <button className="todo-go-btn">
+              <i className="fas fa-arrow-right"></i>
+            </button>
+          </Link>
+          <button onClick={completeHandler} className="todo-complete-btn">
+            <i className="fas fa-check"></i>
+          </button>
+          <button onClick={deleteHandler} className="todo-trash-btn">
+            <i className="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </li>
   );
 };
 
