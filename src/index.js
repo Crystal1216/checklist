@@ -9,7 +9,7 @@ import CheckList from "./components/CheckList";
 import NavBar from "./components/NavBar";
 import Students from "./components/Students";
 import SubmitList from "./components/SubmitList";
-import Calendar from "./components/Calendar";
+import Schedule from "./components/Schedule";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,7 +17,7 @@ ReactDOM.render(
       <NavBar />
       <Routes>
         <Route path="/checklist" element={<App />} />
-        <Route path="/checklist/calendar" element={<Calendar />} />
+        <Route path="/checklist/schedule" element={<Schedule />} />
         <Route path="/checklist/todoList" element={<TodoList />} />
         <Route path="/checklist/check/:id" element={<CheckList />} />
         <Route path="/checklist/students" element={<Students />} />

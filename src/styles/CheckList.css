@@ -7,6 +7,9 @@
   height: 100vh;
   justify-content: center;
 } */
+.Check {
+  padding-top: 80px;
+}
 .Check > h1 {
   text-align: center;
   font-size: 2em;

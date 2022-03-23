@@ -1,8 +1,8 @@
 .Students {
+  padding-top: 80px;
   text-align: center;
   align-items: center;
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   height: 100vh;
   justify-content: center;
@@ -127,19 +127,17 @@
 }
 .std-name-div {
   overflow: scroll;
-  width: 55%;
+  display: inline-block;
 }
 .std-name-div > p {
-  margin-left: 0;
-  margin-right: 100%;
+  float: left;
 }
 .std-btn-box {
   border: none;
-  margin-top: -2px;
   margin-left: auto;
   margin-right: 0;
   display: inline-block;
-  min-width: 40%;
+  min-width: 50%;
 }
 
 .std-go-btn,
@@ -153,6 +151,7 @@
   width: 30px;
   height: 30px;
   margin-right: 3px;
+  float: right;
 }
 .std-update-btn {
   background-color: rgb(100, 132, 202);

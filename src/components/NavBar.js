@@ -3,7 +3,7 @@ import "../styles/NavBar.css";
 
 const NavBar = () => {
   return (
-    <div id="container">
+    <header id="container">
       <nav>
         <div id="logo">
           <Link className="nav-link" to="/checklist">
@@ -11,7 +11,7 @@ const NavBar = () => {
           </Link>
         </div>
         <ul>
-          <Link className="nav-link" to="/checklist/calendar">
+          <Link className="nav-link" to="/checklist/schedule">
             <li>Calendar</li>
           </Link>
           <Link className="nav-link" to="/checklist/todoList">
@@ -22,7 +22,7 @@ const NavBar = () => {
           </Link>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 

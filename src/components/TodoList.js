@@ -43,7 +43,6 @@ const List = () => {
           setInputText={setInputText}
           todos={todos}
           setTodos={setTodos}
-          setStatus={setStatus}
         />
       </div>
       <div className="todo-list">

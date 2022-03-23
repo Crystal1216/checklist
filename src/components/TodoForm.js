@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/Todo.css";
 
-const TodoForm = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
+const TodoForm = ({ inputText, setInputText, todos, setTodos }) => {
   const [inputDate, setInputDate] = useState("");
   const inputTextHandler = (event) => {
     setInputText(event.target.value);
