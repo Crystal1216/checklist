@@ -27,6 +27,9 @@ const Todo = ({ todo, todos, setTodos }) => {
           </p>
         </div>
         <div className="todo-btn-box">
+          <button onClick={deleteHandler} className="todo-trash-btn">
+            <i className="fas fa-trash"></i>
+          </button>
           <Link to={`/checklist/check/${todo.id}`} state={{ todo, todos }}>
             <button className="todo-go-btn">
               <i className="fas fa-arrow-right"></i>
@@ -34,9 +37,6 @@ const Todo = ({ todo, todos, setTodos }) => {
           </Link>
           <button onClick={completeHandler} className="todo-complete-btn">
             <i className="fas fa-check"></i>
-          </button>
-          <button onClick={deleteHandler} className="todo-trash-btn">
-            <i className="fas fa-trash"></i>
           </button>
         </div>
       </div>

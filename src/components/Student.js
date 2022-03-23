@@ -24,17 +24,17 @@ const Student = ({
           <p>{name}</p>
         </div>
         <div className="std-btn-box">
+          <button className="std-trash-btn" onClick={deleteHandler}>
+            <i className="fas fa-trash"></i>
+          </button>
+          <button className="std-update-btn" onClick={updateHandler}>
+            <i className="fas fa-pen"></i>
+          </button>
           <Link to={`/checklist/submit/${num}`} state={{ num, name }}>
             <button className="std-go-btn">
               <i className="fas fa-arrow-right"></i>
             </button>
           </Link>
-          <button className="std-update-btn" onClick={updateHandler}>
-            <i className="fas fa-pen"></i>
-          </button>
-          <button className="std-trash-btn" onClick={deleteHandler}>
-            <i className="fas fa-trash"></i>
-          </button>
         </div>
       </div>
     </li>
