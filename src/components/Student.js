@@ -30,7 +30,7 @@ const Student = ({
           <button className="std-update-btn" onClick={updateHandler}>
             <i className="fas fa-pen"></i>
           </button>
-          <Link to={`/checklist/submit/${num}`} state={{ num, name }}>
+          <Link to={`/submit/${num}`} state={{ num, name }}>
             <button className="std-go-btn">
               <i className="fas fa-arrow-right"></i>
             </button>

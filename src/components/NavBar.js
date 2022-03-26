@@ -6,21 +6,21 @@ const NavBar = () => {
     <header id="container">
       <nav>
         <div id="logo">
-          <Link className="nav-link" to="/checklist">
+          <Link className="nav-link" to="">
             Submit CheckList
           </Link>
         </div>
         <ul>
-          <Link className="nav-link" to="/checklist/schedule">
+          <Link className="nav-link" to="/schedule">
             <li>Calendar</li>
           </Link>
-          <Link className="nav-link" to="/checklist/todoList">
+          <Link className="nav-link" to="/todoList">
             <li>ToDo</li>
           </Link>
-          <Link className="nav-link" to="/checklist/students">
+          <Link className="nav-link" to="/students">
             <li>Students</li>
           </Link>
-          <Link className="nav-link" to="/checklist/submit/summary">
+          <Link className="nav-link" to="/submit/summary">
             <li>Summary</li>
           </Link>
         </ul>

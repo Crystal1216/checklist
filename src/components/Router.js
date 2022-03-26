@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  HashRouter as Router,
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "../Routes/Home";
 import Schedule from "../Routes/Schedule";
@@ -19,13 +14,13 @@ const AppRouter = () => {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/checklist" element={<Home />} />
-        <Route path="/checklist/schedule" element={<Schedule />} />
-        <Route path="/checklist/todoList" element={<TodoList />} />
-        <Route path="/checklist/check/:id" element={<CheckList />} />
-        <Route path="/checklist/students" element={<Students />} />
-        <Route path="/checklist/submit/:id" element={<SubmitList />} />
-        <Route path="/checklist/submit/summary" element={<SubmitSummary />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/todoList" element={<TodoList />} />
+        <Route path="/check/:id" element={<CheckList />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/submit/:id" element={<SubmitList />} />
+        <Route path="/submit/summary" element={<SubmitSummary />} />
       </Routes>
     </Router>
   );

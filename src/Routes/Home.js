@@ -6,16 +6,16 @@ const Home = () => {
     <div className="Home">
       <div>
         <ul className="home-ul">
-          <Link className="home-link" to="/checklist/schedule">
-            <li>Calendar</li>
+          <Link className="home-link" to="/schedule">
+            <li>Schedule</li>
           </Link>
-          <Link className="home-link dropdown" to="/checklist/todoList">
+          <Link className="home-link dropdown" to="/todoList">
             <li>Todo</li>
           </Link>
-          <Link className="home-link" to="/checklist/students">
+          <Link className="home-link" to="/students">
             <li>Students</li>
           </Link>
-          <Link className="home-link" to="/checklist/submit/summary">
+          <Link className="home-link" to="/submit/summary">
             <li>Summary</li>
           </Link>
         </ul>
