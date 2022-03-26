@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import TodoForm from "./TodoForm";
-import Todo from "./Todo";
-import Local from "./Local";
+import TodoForm from "../components/TodoForm";
+import Todo from "../components/Todo";
+import Local from "../components/Local";
+import "../styles/Todo.css";
 
-const List = () => {
+const TodoList = () => {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
@@ -63,4 +64,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default TodoList;

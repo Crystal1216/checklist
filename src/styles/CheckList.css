@@ -50,6 +50,7 @@
   grid-template-columns: repeat(5, 1fr);
   list-style: none;
   font-size: 20px;
+  min-width: 700px;
 }
 .check-ul li {
   max-width: 25vh;
@@ -64,13 +65,17 @@ h2 {
 input[type="checkbox"] {
   display: none;
 }
+.check-li {
+  min-width: 150px;
+}
 .checkbox01 {
   box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
   padding: 5px 30px;
   position: relative;
-  width: auto;
+  min-width: 150px;
+  overflow: auto;
 }
 .checkbox01::before {
   background: #fff;

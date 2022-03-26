@@ -20,6 +20,9 @@ const NavBar = () => {
           <Link className="nav-link" to="/checklist/students">
             <li>Students</li>
           </Link>
+          <Link className="nav-link" to="/checklist/submit/summary">
+            <li>Summary</li>
+          </Link>
         </ul>
       </nav>
     </header>

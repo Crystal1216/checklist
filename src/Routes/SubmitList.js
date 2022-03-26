@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/SubmitList.css";
-import Local from "./Local";
+import Local from "../components/Local";
 
 const SubmitList = () => {
   const location = useLocation();

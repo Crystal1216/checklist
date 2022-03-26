@@ -1,27 +1,28 @@
 import { useEffect, useState } from "react";
 import "../styles/CheckList.css";
 import { useLocation } from "react-router-dom";
-import Local from "./Local";
-import Check from "./Check";
+import Local from "../components/Local";
+import Check from "../components/Check";
 
 const CheckList = () => {
   const location = useLocation();
   const todo = location.state.todo;
-  const [todos, setTodos] = useState([...location.state.todos]);
+  const [todos, setTodos] = useState([]);
   const [studentList, setStudentList] = useState([]);
   const [checkedItems, setCheckedItems] = useState(new Set());
+
   useEffect(() => {
+    Local.getLocalTodos({ todos, setTodos });
     Local.getLocalStudents({ studentList, setStudentList });
   }, []);
-  // useEffect(() => {
-  //   getLocalChecked();
-  // }, []);
   useEffect(() => {
-    setCheckedItems(new Set(todo.checked));
-  }, []);
-  useEffect(() => {
-    saveLocalChecked();
+    localStorage.removeItem("todos");
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
+  useEffect(() => {
+    localStorage.removeItem("students");
+    localStorage.setItem("students", JSON.stringify(studentList));
+  }, [studentList]);
   const saveChecksHandler = (event) => {
     event.preventDefault();
     setTodos(
@@ -35,9 +36,32 @@ const CheckList = () => {
         return item;
       })
     );
+    addSubmitList();
+  };
+  const addSubmitList = () => {
+    setStudentList(
+      studentList.map((student) => {
+        if (![...checkedItems].includes(student.id)) {
+          return {
+            ...student,
+            unSubmitted: student.unSubmitted.includes(todo.text)
+              ? [...student.unSubmitted]
+              : [...student.unSubmitted, todo.text],
+          };
+        }
+        return {
+          ...student,
+          unSubmitted: student.unSubmitted.includes(todo.text)
+            ? student.unSubmitted.filter((el) => el !== todo.text)
+            : [...student.unSubmitted],
+        };
+      })
+    );
   };
   const checkedItemHandler = (id, isChecked) => {
-    console.log(checkedItems);
+    todos
+      .find((el) => el.id === todo.id)
+      .checked.map((el) => checkedItems.add(el));
     if (isChecked) {
       checkedItems.add(id);
       setCheckedItems(checkedItems);
@@ -46,10 +70,7 @@ const CheckList = () => {
       setCheckedItems(checkedItems);
     }
   };
-  const saveLocalChecked = () => {
-    localStorage.removeItem("todos");
-    localStorage.setItem("todos", JSON.stringify(todos));
-  };
+
   return (
     <div className="Check">
       <h1>{todo.text}</h1>
@@ -63,7 +84,7 @@ const CheckList = () => {
           {studentList.map((student) => (
             <Check
               student={student}
-              checkedNum={todo.checked}
+              checkedNum={todos.find((el) => el.id === todo.id).checked}
               key={student.id}
               checkedItemHandler={checkedItemHandler}
             />

@@ -30,7 +30,7 @@ const Todo = ({ todo, todos, setTodos }) => {
           <button onClick={deleteHandler} className="todo-trash-btn">
             <i className="fas fa-trash"></i>
           </button>
-          <Link to={`/checklist/check/${todo.id}`} state={{ todo, todos }}>
+          <Link to={`/checklist/check/${todo.id}`} state={{ todo }}>
             <button className="todo-go-btn">
               <i className="fas fa-arrow-right"></i>
             </button>

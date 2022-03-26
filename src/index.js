@@ -3,27 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TodoList from "./components/TodoList";
-import CheckList from "./components/CheckList";
-import NavBar from "./components/NavBar";
-import Students from "./components/Students";
-import SubmitList from "./components/SubmitList";
-import Schedule from "./components/Schedule";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/checklist" element={<App />} />
-        <Route path="/checklist/schedule" element={<Schedule />} />
-        <Route path="/checklist/todoList" element={<TodoList />} />
-        <Route path="/checklist/check/:id" element={<CheckList />} />
-        <Route path="/checklist/students" element={<Students />} />
-        <Route path="/checklist/submit/:id" element={<SubmitList />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

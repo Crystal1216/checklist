@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "../styles/Students.css";
-import Student from "./Student";
-import Local from "./Local";
+import Student from "../components/Student";
+import Local from "../components/Local";
 
-const Students = () => {
+const StudentsList = () => {
   const [num, setNum] = useState("");
   const [name, setName] = useState("");
   const [studentList, setStudentList] = useState([]);
@@ -43,7 +43,10 @@ const Students = () => {
           })
         );
       } else {
-        setStudentList([...studentList, { num: num, name: name, id: num }]);
+        setStudentList([
+          ...studentList,
+          { num: num, name: name, id: num, unSubmitted: [] },
+        ]);
       }
       setNum("");
       setName("");
@@ -103,4 +106,4 @@ const Students = () => {
   );
 };
 
-export default Students;
+export default StudentsList;

@@ -8,10 +8,10 @@ const Check = ({ student, checkedItemHandler, checkedNum }) => {
     checkedItemHandler(target.id, target.checked);
   };
   useEffect(() => {
-    setChecked(checkedNum.includes(student.id) ? true : false);
+    setChecked([...checkedNum].includes(student.id) ? true : false);
   }, []);
   return (
-    <li key={student.id}>
+    <li key={student.id} className="check-li">
       <input
         id={student.id}
         type="checkbox"
