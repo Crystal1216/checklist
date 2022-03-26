@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  HashRouter as Router,
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "../Routes/Home";
 import Schedule from "../Routes/Schedule";
@@ -11,7 +16,7 @@ import SubmitSummary from "../Routes/SubmitSummary";
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <NavBar />
       <Routes>
         <Route path="/checklist" element={<Home />} />
@@ -22,7 +27,7 @@ const AppRouter = () => {
         <Route path="/checklist/submit/:id" element={<SubmitList />} />
         <Route path="/checklist/submit/summary" element={<SubmitSummary />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 
