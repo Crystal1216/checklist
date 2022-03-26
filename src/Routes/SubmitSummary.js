@@ -20,13 +20,12 @@ const SubmitSummary = () => {
               <li key={student.id}>
                 {student.id}. {student.name} :{" "}
                 {student.unSubmitted.length === 0
-                  ? "complete!"
+                  ? ""
                   : student.unSubmitted.join(", ")}
               </li>
             ))}
         </ul>
       </div>
-      {console.log(studentList)}
     </div>
   );
 };
