@@ -7,15 +7,20 @@ import "../styles/Todo.css";
 const TodoList = () => {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
+  const [studentList, setStudentList] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
   useEffect(() => {
     Local.getLocalTodos({ todos, setTodos });
+    Local.getLocalStudents({ studentList, setStudentList });
   }, []);
   useEffect(() => {
     filterHandler();
     saveLocalTodos();
   }, [todos, status]);
+  useEffect(() => {
+    localStorage.setItem("students", JSON.stringify(studentList));
+  }, [studentList]);
   const statusHandler = ({ target }) => {
     setStatus(target.value);
   };
@@ -56,7 +61,14 @@ const TodoList = () => {
         </div>
         <ul className="todo-ul">
           {filteredTodos.map((todo) => (
-            <Todo key={todo.id} todo={todo} todos={todos} setTodos={setTodos} />
+            <Todo
+              key={todo.id}
+              todo={todo}
+              todos={todos}
+              setTodos={setTodos}
+              studentList={studentList}
+              setStudentList={setStudentList}
+            />
           ))}
         </ul>
       </div>

@@ -7,12 +7,12 @@ const NavBar = () => {
       <nav>
         <div id="logo">
           <Link className="nav-link" to="">
-            Submit CheckList
+            Lists For Teachers
           </Link>
         </div>
         <ul>
           <Link className="nav-link" to="/schedule">
-            <li>Calendar</li>
+            <li>Schedule</li>
           </Link>
           <Link className="nav-link" to="/todoList">
             <li>ToDo</li>
@@ -22,6 +22,9 @@ const NavBar = () => {
           </Link>
           <Link className="nav-link" to="/submit/summary">
             <li>Summary</li>
+          </Link>
+          <Link className="nav-link" to="/download">
+            <li>Donwload</li>
           </Link>
         </ul>
       </nav>

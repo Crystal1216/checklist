@@ -10,18 +10,18 @@ const SubmitSummary = () => {
   return (
     <div className="SubmitSummary">
       <h1>Unsubmitted List</h1>
-      <div>
-        <ul>
+      <div className="summary-list">
+        <ul className="summary-ul">
           {studentList
             .sort((a, b) => {
               return a.num - b.num;
             })
             .map((student) => (
               <li key={student.id}>
-                {student.id}. {student.name} :{" "}
-                {student.unSubmitted.length === 0
-                  ? ""
-                  : student.unSubmitted.join(", ")}
+                <div>
+                  {student.id}. {student.name} :{" "}
+                  {student.unSubmitted.join(", ")}
+                </div>
               </li>
             ))}
         </ul>

@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom";
 
-const Todo = ({ todo, todos, setTodos }) => {
+const Todo = ({ todo, todos, setTodos, studentList, setStudentList }) => {
   const deleteHandler = () => {
+    setStudentList(
+      studentList.map((student) => {
+        if (student.unSubmitted.includes(todo.text)) {
+          return {
+            ...student,
+            unSubmitted: [
+              ...student.unSubmitted.filter((el) => el !== todo.text),
+            ],
+          };
+        }
+        return student;
+      })
+    );
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
   const completeHandler = () => {

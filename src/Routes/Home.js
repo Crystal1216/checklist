@@ -18,6 +18,9 @@ const Home = () => {
           <Link className="home-link" to="/submit/summary">
             <li>Summary</li>
           </Link>
+          <Link className="home-link" to="/download">
+            <li>Download</li>
+          </Link>
         </ul>
       </div>
     </div>
