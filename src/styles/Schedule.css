@@ -1,3 +1,42 @@
 .Schedule {
-  padding-top: 1px;
+  padding-top: 80px;
+}
+.Schedule > div {
+  display: inline-block;
+}
+.event-div {
+  padding: 20px 0 0 2%;
+  width: 15%;
+}
+.event-div > p {
+  margin-bottom: 5%;
+}
+.cal-div {
+  padding-left: 2%;
+  width: 75%;
+  position: absolute;
+}
+
+.event-div > input,
+.datepicker {
+  padding: 5px 0 5px 10px;
+  border-radius: 5px;
+  color: #868283;
+  border: 2px solid #868283;
+  margin-bottom: 3%;
+  width: 95%;
+}
+.event-div > button {
+  background: #d09b52;
+  color: #f8f4ee;
+  border: 2px solid #d09b52;
+  border-radius: 10px;
+  outline: 10px solid #fff;
+  width: 25%;
+  height: 30px;
+  margin-right: 5%;
+  float: right;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
 }

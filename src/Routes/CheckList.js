@@ -16,15 +16,16 @@ const CheckList = () => {
     Local.getLocalStudents({ studentList, setStudentList });
   }, []);
   useEffect(() => {
-    localStorage.removeItem("todos");
+    // localStorage.removeItem("todos");
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
   useEffect(() => {
-    localStorage.removeItem("students");
+    // localStorage.removeItem("students");
     localStorage.setItem("students", JSON.stringify(studentList));
   }, [studentList]);
   const saveChecksHandler = (event) => {
     event.preventDefault();
+    window.alert("success");
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
