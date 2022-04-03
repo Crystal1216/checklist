@@ -25,26 +25,42 @@
   min-height: 20vh;
   display: grid;
   justify-content: center;
-  align-items: center;
 }
 
 .check-form button {
   border-radius: 10px;
-  min-width: 60px;
-  margin: 1% 40% 2% 40%;
+  margin-left: auto;
+  margin-right: 1%;
+  margin-bottom: 2%;
   padding: 10px;
   font-size: 15px;
   border: none;
   color: #ebe5d3;
-  background: #9b7a56;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.check-form button:hover {
-  background: #976729;
+.check-save-btn {
+  float: right;
+  width: 20%;
+  background: #9b7a56;
+}
+.check-save-btn:hover {
+  background: #67451a;
   color: white;
 }
-
+.check-all-btn {
+  width: 8%;
+  background: #799b56;
+}
+.check-all-btn:hover {
+  background: #40552b;
+  color: white;
+}
+.check-ul-div {
+  border-style: dotted;
+  border-radius: 10px;
+  padding: 2%;
+}
 .check-ul {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
