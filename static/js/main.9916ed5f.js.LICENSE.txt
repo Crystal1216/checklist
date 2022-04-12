@@ -10,6 +10,10 @@ object-assign
   http://jedwatson.github.io/classnames
 */
 
+/*! sheetjs (C) 2013-present SheetJS -- http://sheetjs.com */
+
+/*! xlsx.js (C) 2013-present SheetJS -- http://sheetjs.com */
+
 /**
  * React Router DOM v6.2.2
  *
