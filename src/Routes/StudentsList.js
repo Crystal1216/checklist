@@ -2,17 +2,21 @@ import { useEffect, useState } from "react";
 import "../styles/Students.css";
 import Student from "../components/Student";
 import Local from "../components/Local";
+import ModalUpload from "../components/ModalUpload";
 
 const StudentsList = () => {
   const [num, setNum] = useState("");
   const [name, setName] = useState("");
   const [studentList, setStudentList] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
     Local.getLocalStudents({ studentList, setStudentList });
   }, []);
   useEffect(() => {
     saveLocalStudents();
   }, [studentList]);
+
   const numHandler = (event) => {
     const number = event.target.value;
     if (number < 1) {
@@ -59,6 +63,22 @@ const StudentsList = () => {
   return (
     <div className="Students">
       <h1>Students List</h1>
+      <div className="std-upload-div">
+        <button
+          className="modal-btn"
+          onClick={() => {
+            setOpenModal(true);
+          }}
+        >
+          Upload NameList
+        </button>
+        {openModal && (
+          <ModalUpload
+            setOpenModal={setOpenModal}
+            setStudentList={setStudentList}
+          />
+        )}
+      </div>
       <div className="std-register">
         <form className="std-form">
           <input
@@ -85,21 +105,22 @@ const StudentsList = () => {
       </div>
       <div className="std-list">
         <ul className="std-ul">
-          {studentList
-            .sort((a, b) => {
-              return a.num - b.num;
-            })
-            .map((student) => (
-              <Student
-                key={student.id}
-                num={student.num}
-                setNum={setNum}
-                name={student.name}
-                setName={setName}
-                studentList={studentList}
-                setStudentList={setStudentList}
-              />
-            ))}
+          {studentList &&
+            studentList
+              .sort((a, b) => {
+                return a.num - b.num;
+              })
+              .map((student) => (
+                <Student
+                  key={student.id}
+                  num={student.num}
+                  setNum={setNum}
+                  name={student.name}
+                  setName={setName}
+                  studentList={studentList}
+                  setStudentList={setStudentList}
+                />
+              ))}
         </ul>
       </div>
     </div>

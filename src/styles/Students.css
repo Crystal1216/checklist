@@ -8,9 +8,27 @@
   justify-content: center;
 }
 .Students > h1 {
-  margin-bottom: 30px;
+  margin-bottom: 2%;
   font-size: 2em;
   color: rgb(90, 90, 90);
+}
+.std-upload-div {
+  width: 50%;
+  display: inline-block;
+  margin: auto auto 1%;
+}
+.std-upload-div > button {
+  float: left;
+  background: #52d0bf;
+  color: white;
+  border: 2px solid #52d0bf;
+  border-radius: 10px;
+  width: 25%;
+  height: 40px;
+  font-weight: 800;
+  font-size: 0.7em;
+  letter-spacing: 1.8pt;
+  cursor: pointer;
 }
 .std-register {
   display: flex;

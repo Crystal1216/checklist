@@ -1,9 +1,6 @@
 import "../styles/Schedule.css";
-import {
-  Calendar,
-  // dateFnsLocalizer,
-  momentLocalizer,
-} from "react-big-calendar";
+import Local from "../components/Local";
+import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import { useEffect, useState } from "react";
@@ -13,12 +10,17 @@ import "react-datepicker/dist/react-datepicker.css";
 const Schedule = () => {
   moment.locale("ko-KR");
   const localizer = momentLocalizer(moment);
+  const [todos, setTodos] = useState([]);
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState([]);
   const [addBtn, setAddBtn] = useState(false);
+  const [bChecked, setChecked] = useState(false);
 
   useEffect(() => {
-    getLocalTodos({ allEvents, setAllEvents });
+    Local.getLocalTodos({ todos, setTodos });
+  }, []);
+  useEffect(() => {
+    getEventsList({ allEvents, setAllEvents });
   }, []);
   useEffect(() => {
     localStorage.setItem("events", JSON.stringify(allEvents));
@@ -31,7 +33,7 @@ const Schedule = () => {
     setAddBtn(false);
   }, [addBtn]);
 
-  const getLocalTodos = ({ allEvents, setAllEvents }) => {
+  const getEventsList = ({ allEvents, setAllEvents }) => {
     if (localStorage.getItem("events") === null) {
       localStorage.setItem("events", JSON.stringify([]));
     } else {
@@ -53,10 +55,13 @@ const Schedule = () => {
   );
 
   const addEventHandler = async () => {
-    let endDate = new Date(newEvent.end);
-    endDate.setDate(endDate.getDate() + 1);
-    setNewEvent({ ...newEvent, end: endDate });
-    setAddBtn(true);
+    if (newEvent.title !== "" && newEvent.start !== "" && newEvent.end !== "") {
+      let endDate = new Date(newEvent.end);
+      endDate.setDate(endDate.getDate() + 1);
+      setNewEvent({ ...newEvent, end: endDate });
+      setAddBtn(true);
+      console.log(bChecked);
+    }
     // setAllEvents([...allEvents, newEvent2]);
   };
   const selectEventHandler = (event) => {
@@ -103,6 +108,17 @@ const Schedule = () => {
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
+        <div className="calendar-check-div">
+          <input
+            id="checkList"
+            type="checkbox"
+            checked={bChecked}
+            onChange={() => setChecked(!bChecked)}
+          />
+          <label htmlFor="checkList" className="calendar-checkbox">
+            CheckList
+          </label>
+        </div>
         <button onClick={addEventHandler}>Add</button>
       </div>
       <div className="cal-div">

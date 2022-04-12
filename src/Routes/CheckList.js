@@ -106,16 +106,15 @@ const CheckList = () => {
       <br />
       <form className="check-form">
         <div>
+          <button className="check-all-btn" onClick={allCheckHandler}>
+            ALL
+          </button>
           <button
             className="check-save-btn"
             type="submit"
             onClick={saveChecksHandler}
           >
             SAVE
-          </button>
-          <input type="checkbox" />
-          <button className="check-all-btn" onClick={allCheckHandler}>
-            ALL
           </button>
         </div>
         <div className="check-ul-div">

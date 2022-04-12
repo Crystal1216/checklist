@@ -10,7 +10,7 @@ const Home = () => {
             <li>Schedule</li>
           </Link>
           <Link className="home-link dropdown" to="/todoList">
-            <li>Todo</li>
+            <li>CheckList</li>
           </Link>
           <Link className="home-link" to="/students">
             <li>Students</li>

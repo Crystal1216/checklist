@@ -1,0 +1,80 @@
+.modal-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 79%, 0.75);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-container {
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-title > h1 {
+  margin-top: 25px;
+  color: gray;
+}
+.modal-body {
+  margin-top: 8%;
+}
+.modal-file {
+  padding: 10px 40px;
+  color: #ffffff;
+  background-color: #7ed45f;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.modal-body > p {
+  margin-top: 20px;
+}
+.modal-body > label > input[type="file"] {
+  display: none;
+}
+.modal-btn-div > button {
+  margin: 5% 1% 5% 1%;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 25%;
+  height: 40px;
+  font-weight: 800;
+  font-size: 0.7em;
+  letter-spacing: 1.8pt;
+  cursor: pointer;
+}
+.modal-btn-upload {
+  background: #5481e9;
+}
+.modal-btn-cancel {
+  background: #ec7166;
+}
+.modal-table > p {
+  margin-left: 15%;
+  text-align: left;
+}
+table {
+  margin: 0 auto;
+  table-layout: fixed;
+  width: 60%;
+  border-collapse: collapse;
+  border: 1px solid #333;
+}
+.td-row {
+  width: 10%;
+  color: rgb(152, 152, 152);
+}
+.td-ex {
+  color: rgb(152, 152, 152);
+}
+td {
+  border-collapse: collapse;
+  border: 1px solid #333;
+}

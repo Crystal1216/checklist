@@ -79,9 +79,31 @@
   background: #ecf0f1;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
+.todo-select {
+  display: inline-block;
+  width: 100%;
+}
+.todo-save-btn {
+  width: 15%;
+  margin-left: 2%;
+  margin-top: 1%;
+  float: left;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 8px;
+  border: none;
+  background: #ac70af;
+  color: #ebe5d3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.todo-save-btn:hover {
+  background: #7b52b4;
+  color: white;
+}
 .todo-filter {
-  margin-left: 70%;
-  margin-bottom: 10px;
+  float: right;
+  margin-right: 5%;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -93,7 +115,6 @@
 .todo-ul {
   margin: 0;
   padding: 0;
-  /* text-align: center; */
 }
 .todo-li {
   border-radius: 5px;

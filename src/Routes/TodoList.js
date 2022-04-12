@@ -3,6 +3,7 @@ import TodoForm from "../components/TodoForm";
 import Todo from "../components/Todo";
 import Local from "../components/Local";
 import "../styles/Todo.css";
+import { CSVLink } from "react-csv";
 
 const TodoList = () => {
   const [inputText, setInputText] = useState("");
@@ -10,6 +11,8 @@ const TodoList = () => {
   const [studentList, setStudentList] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [downloadHeaders, setDownloadHeaders] = useState([]);
+
   useEffect(() => {
     Local.getLocalTodos({ todos, setTodos });
     Local.getLocalStudents({ studentList, setStudentList });
@@ -21,6 +24,14 @@ const TodoList = () => {
   useEffect(() => {
     localStorage.setItem("students", JSON.stringify(studentList));
   }, [studentList]);
+  useEffect(() => {
+    setDownloadHeaders([
+      { label: "Title", key: "text" },
+      { label: "Deadline", key: "deadline" },
+      { label: "Completed", key: "completed" },
+      { label: "Submitted", key: "checked" },
+    ]);
+  }, []);
   const statusHandler = ({ target }) => {
     setStatus(target.value);
   };
@@ -40,9 +51,10 @@ const TodoList = () => {
   const saveLocalTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   };
+
   return (
     <div className="Todo">
-      <h1>Todo List</h1>
+      <h1>Check Submit List</h1>
       <div className="todo-register">
         <TodoForm
           inputText={inputText}
@@ -52,6 +64,13 @@ const TodoList = () => {
         />
       </div>
       <div className="todo-list">
+        <CSVLink
+          data={todos}
+          headers={downloadHeaders}
+          filename={"Todo_Lists.csv"}
+        >
+          <button className="todo-save-btn">DownLoad</button>
+        </CSVLink>
         <div className="todo-select">
           <select onChange={statusHandler} name="todos" className="todo-filter">
             <option value="all">All</option>

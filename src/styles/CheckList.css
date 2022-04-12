@@ -78,11 +78,11 @@ h2 {
   text-align: center;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
 .check-li {
   min-width: 150px;
+}
+input[type="checkbox"] {
+  display: none;
 }
 .checkbox01 {
   box-sizing: border-box;
