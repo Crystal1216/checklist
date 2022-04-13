@@ -32,6 +32,9 @@ const Schedule = () => {
     }
     setAddBtn(false);
   }, [addBtn]);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const getEventsList = ({ allEvents, setAllEvents }) => {
     if (localStorage.getItem("events") === null) {
@@ -60,7 +63,20 @@ const Schedule = () => {
       endDate.setDate(endDate.getDate() + 1);
       setNewEvent({ ...newEvent, end: endDate });
       setAddBtn(true);
-      console.log(bChecked);
+      const y = newEvent.end.getFullYear();
+      const m = ("00" + (newEvent.end.getMonth() + 1)).slice(-2);
+      const d = ("00" + newEvent.end.getDate()).slice(-2);
+      const deadline = y + "-" + m + "-" + d;
+      setTodos([
+        ...todos,
+        {
+          text: newEvent.title,
+          deadline: deadline,
+          completed: false,
+          id: Math.random() * 1000,
+          checked: [],
+        },
+      ]);
     }
     // setAllEvents([...allEvents, newEvent2]);
   };

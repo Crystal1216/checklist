@@ -58,7 +58,7 @@ const ModalUpload = ({ setOpenModal, setStudentList }) => {
               accept=".xlsx, .xls"
               onChange={fileSelectHandler}
             />
-            SELECT FILE
+            Select File
           </label>
           <p>{inputFile.name}</p>
           <div className="modal-btn-div">
@@ -103,9 +103,9 @@ const ModalUpload = ({ setOpenModal, setStudentList }) => {
                 <td></td>
               </tr>
               <tr>
-                <td className="td-row">4</td>
-                <td>3</td>
-                <td>***</td>
+                <td className="td-row">...</td>
+                <td>...</td>
+                <td>...</td>
                 <td></td>
               </tr>
             </tbody>
