@@ -66,13 +66,15 @@ const CheckList = () => {
     window.alert("success");
   };
   const checkedItemHandler = (id, isChecked) => {
-    todos
-      .find((el) => el.id === todo.id)
-      .checked.map((el) => checkedItems.add(el));
-    console.log(checkedItems);
-    if (isChecked) {
+    if (checkedItems.size === 0) {
+      todos
+        .find((el) => el.id === todo.id)
+        .checked.map((el) => checkedItems.add(el));
+    }
+    if (isChecked && !checkedItems.has(id)) {
       checkedItems.add(id);
-    } else if (!isChecked && checkedItems.has(id)) {
+    }
+    if (!isChecked && checkedItems.has(id)) {
       checkedItems.delete(id);
     }
   };
