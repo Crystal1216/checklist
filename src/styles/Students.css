@@ -155,8 +155,13 @@
 }
 .std-name-div {
   overflow: scroll;
-  -ms-overflow-style: none;
   display: inline-block;
+}
+.scroll {
+  overflow-x: scroll;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
 }
 .std-name-div > p {
   float: left;
