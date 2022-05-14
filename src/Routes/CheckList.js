@@ -9,9 +9,9 @@ const CheckList = () => {
   const todo = location.state.todo;
   const [todos, setTodos] = useState([]);
   const [studentList, setStudentList] = useState([]);
-  const [checkedItems, setCheckedItems] = useState(new Set());
   const [save, setSave] = useState(false);
   const [isAll, setIsAll] = useState(false);
+  const checkedItems = new Set();
 
   useEffect(() => {
     Local.getLocalTodos({ todos, setTodos });
@@ -69,12 +69,12 @@ const CheckList = () => {
     todos
       .find((el) => el.id === todo.id)
       .checked.map((el) => checkedItems.add(el));
+    console.log(checkedItems);
     if (isChecked) {
       checkedItems.add(id);
     } else if (!isChecked && checkedItems.has(id)) {
       checkedItems.delete(id);
     }
-    setCheckedItems(checkedItems);
   };
   const allCheckHandler = (event) => {
     event.preventDefault();
@@ -85,7 +85,6 @@ const CheckList = () => {
       studentList.map((el) => checkedItems.add(el.id));
       setIsAll(true);
     }
-    setCheckedItems(checkedItems);
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {

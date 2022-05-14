@@ -19,13 +19,15 @@ const StudentsList = () => {
 
   const numHandler = (event) => {
     const number = event.target.value;
-    if (number < 1) {
-      return;
-    }
+    console.log(typeof number);
     if (number.length > 2) {
-      setNum(number.substr(0, 2));
+      setNum(Number(number.substr(0, 2)));
     } else {
-      setNum(event.target.value);
+      if (number < 1) {
+        setNum("");
+      } else {
+        setNum(Number(event.target.value));
+      }
     }
   };
   const nameHandler = (event) => {
@@ -81,7 +83,7 @@ const StudentsList = () => {
       </div>
       <div className="std-register">
         <form className="std-form">
-          <div>
+          {/* <div>
             <input
               type="number"
               className="std-input grd"
@@ -94,7 +96,7 @@ const StudentsList = () => {
               placeholder="class"
               required
             />
-          </div>
+          </div> */}
           <div>
             <input
               type="number"

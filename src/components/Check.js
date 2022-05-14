@@ -5,10 +5,10 @@ const Check = ({ student, checkedItemHandler, checkedNum }) => {
   const [bChecked, setChecked] = useState(false);
   const checkHandler = ({ target }) => {
     setChecked(!bChecked);
-    checkedItemHandler(target.id, target.checked);
+    checkedItemHandler(Number(target.id), target.checked);
   };
   useEffect(() => {
-    setChecked([...checkedNum].includes(String(student.id)) ? true : false);
+    setChecked([...checkedNum].includes(student.id) ? true : false);
   }, [checkedNum]);
   return (
     <li key={student.id} className="check-li">

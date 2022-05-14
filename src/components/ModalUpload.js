@@ -52,10 +52,10 @@ const ModalUpload = ({ setOpenModal, setStudentList }) => {
           <h1>Upload NameList</h1>
         </div>
         <div className="modal-body">
-          <div className="modal-class-div">
+          {/* <div className="modal-class-div">
             <input placeholder="grade" />
             <input placeholder="class" />
-          </div>
+          </div> */}
           <label className="modal-file">
             <input
               type="file"
