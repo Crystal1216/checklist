@@ -63,15 +63,11 @@ const Schedule = () => {
       endDate.setDate(endDate.getDate() + 1);
       setNewEvent({ ...newEvent, end: endDate });
       setAddBtn(true);
-      const y = newEvent.end.getFullYear();
-      const m = ("00" + (newEvent.end.getMonth() + 1)).slice(-2);
-      const d = ("00" + newEvent.end.getDate()).slice(-2);
-      const deadline = y + "-" + m + "-" + d;
       setTodos([
         ...todos,
         {
           text: newEvent.title,
-          deadline: deadline,
+          deadline: formatDate(newEvent.end),
           completed: false,
           id: Math.random() * 1000,
           checked: [],
@@ -80,6 +76,14 @@ const Schedule = () => {
     }
     // setAllEvents([...allEvents, newEvent2]);
   };
+
+  const formatDate = (date) => {
+    const y = date.getFullYear();
+    const m = ("00" + (date.getMonth() + 1)).slice(-2);
+    const d = ("00" + date.getDate()).slice(-2);
+    return y + "-" + m + "-" + d;
+  };
+
   const selectEventHandler = (event) => {
     if (
       window.confirm(`Do you want to delete this event?\n > ${event.title}`)

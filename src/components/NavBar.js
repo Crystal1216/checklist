@@ -24,7 +24,7 @@ const NavBar = () => {
             <li>Summary</li>
           </Link>
           <Link className="nav-link" to="/download">
-            <li>Donwload</li>
+            <li>Download</li>
           </Link>
         </ul>
       </nav>

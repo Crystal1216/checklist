@@ -26,6 +26,13 @@
 .modal-body {
   margin-top: 8%;
 }
+.modal-class-div {
+  margin-bottom: 5%;
+}
+.modal-class-div > input {
+  width: 20%;
+  margin-right: 1%;
+}
 .modal-file {
   padding: 10px 30px;
   color: #ffffff;

@@ -53,26 +53,36 @@
   border-radius: 10px;
   display: none;
 } */
-.std-form > input {
+.std-form > div {
+  display: flex;
+}
+.std-form > div > input {
   padding: 10px 15px;
   border-radius: 10px;
   transition: 0.3s ease;
   color: #868283;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border: 2px solid #868283;
   float: left;
-  margin-right: 30px;
 }
-.std-form > .num {
-  width: calc(30%);
+.std-form > div > .grd {
+  width: 15%;
+  margin-right: 3%;
 }
-.std-form > .name {
-  width: calc(60%);
+.std-form > div > .cls {
+  width: 15%;
 }
-.std-form > .std-input:placeholder-shown {
+.std-form > div > .num {
+  width: 30%;
+  margin-right: 5%;
+}
+.std-form > div > .name {
+  width: 60%;
+}
+.std-input:placeholder-shown {
   border: 2px solid #eae4da;
 }
-.std-form > .std-input::placeholder {
+.std-input::placeholder {
   color: #a3a5aa;
 }
 .std-form > button {
@@ -145,6 +155,7 @@
 }
 .std-name-div {
   overflow: scroll;
+  -ms-overflow-style: none;
   display: inline-block;
 }
 .std-name-div > p {

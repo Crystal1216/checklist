@@ -81,22 +81,38 @@ const StudentsList = () => {
       </div>
       <div className="std-register">
         <form className="std-form">
-          <input
-            type="number"
-            className="std-input num"
-            value={num}
-            onChange={numHandler}
-            placeholder="No."
-            required
-          />
-          <input
-            type="text"
-            className="std-input name"
-            value={name}
-            onChange={nameHandler}
-            placeholder="name"
-            required
-          />
+          <div>
+            <input
+              type="number"
+              className="std-input grd"
+              placeholder="grade"
+              required
+            />
+            <input
+              type="number"
+              className="std-input cls"
+              placeholder="class"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="number"
+              className="std-input num"
+              value={num}
+              onChange={numHandler}
+              placeholder="No."
+              required
+            />
+            <input
+              type="text"
+              className="std-input name"
+              value={name}
+              onChange={nameHandler}
+              placeholder="name"
+              required
+            />
+          </div>
           <button type="submit" onClick={listAddHandler}>
             {/* <i className="fas fa-check"></i> */}
             register
