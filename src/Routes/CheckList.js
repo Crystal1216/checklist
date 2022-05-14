@@ -71,11 +71,10 @@ const CheckList = () => {
       .checked.map((el) => checkedItems.add(el));
     if (isChecked) {
       checkedItems.add(id);
-      setCheckedItems(checkedItems);
     } else if (!isChecked && checkedItems.has(id)) {
       checkedItems.delete(id);
-      setCheckedItems(checkedItems);
     }
+    setCheckedItems(checkedItems);
   };
   const allCheckHandler = (event) => {
     event.preventDefault();
