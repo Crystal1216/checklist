@@ -157,10 +157,7 @@
   overflow: scroll;
   display: inline-block;
 }
-.scroll {
-  overflow-x: scroll;
-}
-.scroll::-webkit-scrollbar {
+.std-name-div::-webkit-scrollbar {
   display: none;
 }
 .std-name-div > p {
