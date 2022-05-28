@@ -7,6 +7,7 @@ import ModalUpload from "../components/ModalUpload";
 const StudentsList = () => {
   const [num, setNum] = useState("");
   const [name, setName] = useState("");
+  const [group, setGroup] = useState("");
   const [studentList, setStudentList] = useState([]);
   const [openModal, setOpenModal] = useState(false);
 
@@ -19,7 +20,6 @@ const StudentsList = () => {
 
   const numHandler = (event) => {
     const number = event.target.value;
-    console.log(typeof number);
     if (number.length > 2) {
       setNum(Number(number.substr(0, 2)));
     } else {
@@ -27,6 +27,19 @@ const StudentsList = () => {
         setNum("");
       } else {
         setNum(Number(event.target.value));
+      }
+    }
+  };
+  const groupHandler = (event) => {
+    const group = event.target.value;
+    console.log(typeof group);
+    if (group.length > 2) {
+      setGroup(Number(group.substr(0, 2)));
+    } else {
+      if (group < 1) {
+        setGroup("");
+      } else {
+        setGroup(Number(event.target.value));
       }
     }
   };
@@ -42,6 +55,7 @@ const StudentsList = () => {
             if (student.id === num) {
               return {
                 ...student,
+                group: group,
                 name: name,
               };
             }
@@ -51,10 +65,11 @@ const StudentsList = () => {
       } else {
         setStudentList([
           ...studentList,
-          { num: num, name: name, id: num, unSubmitted: [] },
+          { num: num, name: name, group: group, id: num, unSubmitted: [] },
         ]);
       }
       setNum("");
+      setGroup("");
       setName("");
     }
   };
@@ -106,12 +121,20 @@ const StudentsList = () => {
               placeholder="No."
               required
             />
+            {/* <input
+              type="number"
+              className="std-input group"
+              value={group}
+              onChange={groupHandler}
+              placeholder="Group"
+              required
+            /> */}
             <input
               type="text"
               className="std-input name"
               value={name}
               onChange={nameHandler}
-              placeholder="name"
+              placeholder="Name"
               required
             />
           </div>
@@ -135,6 +158,8 @@ const StudentsList = () => {
                   setNum={setNum}
                   name={student.name}
                   setName={setName}
+                  group={student.group}
+                  setGroup={setGroup}
                   studentList={studentList}
                   setStudentList={setStudentList}
                 />

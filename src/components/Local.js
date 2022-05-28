@@ -19,3 +19,14 @@ exports.getLocalTodos = ({ todos, setTodos }) => {
     setTodos(todoLocal);
   }
 };
+
+exports.getLocalGroups = ({ groupList, setGroupList }) => {
+  if (localStorage.getItem("groups") === null) {
+    localStorage.setItem("groups", JSON.stringify([]));
+  } else {
+    let groupsLocal = JSON.parse(
+      localStorage.getItem("groups", JSON.stringify(groupList))
+    );
+    setGroupList(groupsLocal);
+  }
+};

@@ -18,14 +18,12 @@ const CheckList = () => {
     Local.getLocalStudents({ studentList, setStudentList });
   }, []);
   useEffect(() => {
-    // localStorage.removeItem("todos");
     if (save) {
       localStorage.setItem("todos", JSON.stringify(todos));
       setSave(false);
     }
   }, [save, todos]);
   useEffect(() => {
-    // localStorage.removeItem("students");
     localStorage.setItem("students", JSON.stringify(studentList));
   }, [studentList]);
   const saveChecksHandler = (event) => {

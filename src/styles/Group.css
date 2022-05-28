@@ -1,0 +1,98 @@
+.Group {
+  padding-top: 80px;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  justify-content: center;
+}
+.Group > h1 {
+  margin-bottom: 2%;
+  font-size: 2em;
+  color: rgb(90, 90, 90);
+}
+.group-add-form > input {
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid #a0e3e8;
+  font-size: 15px;
+  color: rgb(119, 119, 119);
+  height: 40px;
+  width: 100px;
+  padding-left: 10px;
+}
+.group-add-form > input::placeholder {
+  color: #b1b1b1;
+}
+.group-add-form > button {
+  color: #f8f4ee;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 60px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.group-add-form > .add {
+  background: #6cc289;
+}
+.group-add-form > .del {
+  background: #de7c9b;
+}
+
+.group-num-btn {
+  list-style: none;
+  padding: 3px 10px;
+  background-color: rgb(124, 197, 231);
+  font-size: 20px;
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+  width: 40px;
+  cursor: pointer;
+}
+.group-num-btn:hover {
+  background-color: rgb(80, 143, 173);
+}
+#num-selected {
+  background-color: rgb(80, 125, 173);
+}
+
+.group-check-form {
+  min-height: 20vh;
+  display: grid;
+  justify-content: center;
+}
+.group-check-form > div {
+  display: inline-flex;
+}
+.group-check-form > div > p {
+  font-size: 25px;
+  font-weight: 800;
+  color: #515d9e;
+  align-self: center;
+  text-shadow: 1px 1px 2px #b1b1b1;
+}
+.group-check-form button {
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: 1%;
+  margin-bottom: 2%;
+  padding: 10px;
+  font-size: 13px;
+  border: none;
+  color: #ebe5d3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.group-save-btn {
+  float: right;
+  width: 13%;
+  background: #7670c6;
+}
+.group-save-btn:hover {
+  background: #4e38b3;
+  color: white;
+}

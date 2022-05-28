@@ -9,6 +9,7 @@ import Students from "../Routes/StudentsList";
 import SubmitList from "../Routes/SubmitList";
 import SubmitSummary from "../Routes/SubmitSummary";
 import Download from "../Routes/Download";
+import Group from "../Routes/Group";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
         <Route path="/students" element={<Students />} />
         <Route path="/submit/:id" element={<SubmitList />} />
         <Route path="/submit/summary" element={<SubmitSummary />} />
+        <Route path="/group" element={<Group />} />
         <Route path="/download" element={<Download />} />
       </Routes>
     </Router>

@@ -6,12 +6,15 @@ const Student = ({
   setNum,
   name,
   setName,
+  group,
+  setGroup,
   studentList,
   setStudentList,
 }) => {
   const updateHandler = () => {
     setNum(num);
     setName(name);
+    setGroup(group);
   };
   const deleteHandler = () => {
     setStudentList(studentList.filter((el) => el.id !== num));
@@ -19,6 +22,7 @@ const Student = ({
   return (
     <li className="std-li">
       <p className="std-num">{num}</p>
+      {group && <p className="std-group">{group}</p>}
       <div className="std-li-box">
         <div className="std-name-div">
           <p>{name}</p>

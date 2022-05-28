@@ -76,8 +76,13 @@
   width: 30%;
   margin-right: 5%;
 }
+.std-form > div > .group {
+  width: 20%;
+  margin-right: 5%;
+}
 .std-form > div > .name {
   width: 60%;
+  margin-right: 5%;
 }
 .std-input:placeholder-shown {
   border: 2px solid #eae4da;
@@ -134,12 +139,22 @@
   background: #fff;
 }
 .std-num {
-  font-size: 15px;
+  font-size: 16px;
   color: white;
-  margin: -10px 10px 0 -10px;
+  margin: -10px 15px 0 -10px;
   background-color: rgb(206, 192, 162);
   border-radius: 5px;
   width: 30px;
+  float: left;
+}
+.std-group {
+  font-size: 12px;
+  color: rgb(95, 95, 95);
+  margin: -5px 0 0 -10px;
+  background-color: rgb(198, 206, 162);
+  border-radius: 5px;
+  width: 20px;
+  float: left;
 }
 .std-li-box {
   border-radius: 5px;
